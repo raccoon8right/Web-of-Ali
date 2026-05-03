@@ -1,0 +1,54 @@
+.cal-title {
+    font-family: var(--fuente-titulo);
+    font-size: 1.1rem;
+    color: var(--azul-oscuro);
+    margin-bottom: 0.8rem;
+}
+
+/* Fecha */
+.cal-date {
+    text-align: center;
+    margin-bottom: 0.8rem;
+}
+
+.cal-day {
+    font-family: var(--fuente-titulo);
+    font-size: 2.5rem;
+    color: var(--rojo);
+    line-height: 1;
+}
+
+.cal-month {
+    font-size: 0.8rem;
+    color: var(--texto-claro);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 0.2rem;
+}
+
+/* Mensaje del día */
+.cal-msg {
+    background: linear-gradient(135deg, var(--pastel-rosa), var(--azul-suave));
+    border-radius: var(--radio-md);
+    padding: 0.8rem;
+    text-align: center;
+}
+
+.cal-emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.cal-msg-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--texto);
+}
+
+.cal-msg-sub {
+    font-size: 0.75rem;
+    color: var(--texto-suave);
+    margin-top: 0.2rem;
+    line-height: 1.4;
+}

@@ -1,0 +1,115 @@
+.navbar {
+    background: linear-gradient(90deg, var(--pastel-rosa) 0%, var(--blanco) 50%, var(--azul-suave) 100%);
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(90deg, var(--rojo), var(--azul)) 1;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 58px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Logo */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--fuente-titulo);
+    font-size: 1.5rem;
+    color: var(--rojo);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-logo-icon {
+    font-size: 1.3rem;
+    color: var(--rojo);
+    transition: transform 0.4s ease;
+}
+
+.nav-logo:hover .nav-logo-icon {
+    transform: rotate(15deg) scale(1.2);
+}
+
+/* Links */
+.nav-links {
+    display: flex;
+    gap: 0.3rem;
+    list-style: none;
+}
+
+.nav-btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    background: none;
+    border: none;
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--texto);
+    padding: 6px 14px;
+    border-radius: var(--radio-pill);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    min-width: 70px;
+}
+
+.nav-btn-icon {
+    font-size: 0.85rem;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.nav-btn:hover .nav-btn-icon,
+.nav-btn.active .nav-btn-icon {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-btn:hover {
+    background: var(--pastel-rosa);
+    color: var(--rojo);
+}
+
+.nav-btn.active {
+    background: var(--pastel-rosa);
+    color: var(--rojo);
+}
+
+/* Punto indicador */
+.nav-dot {
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--rojo);
+    margin-top: 2px;
+    animation: dotPop 0.3s ease;
+}
+
+@keyframes dotPop {
+    0% {
+        transform: scale(0);
+    }
+
+    70% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

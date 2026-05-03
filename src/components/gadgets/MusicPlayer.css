@@ -1,0 +1,101 @@
+.music-title {
+    font-family: var(--fuente-titulo);
+    font-size: 1.1rem;
+    color: var(--azul-oscuro);
+    margin-bottom: 0.8rem;
+}
+
+/* Lista de canciones */
+.track-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.track {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: var(--radio-md);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.track:hover,
+.track.playing {
+    background: var(--azul-suave);
+}
+
+.track-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radio-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.track-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.track-name {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--azul-oscuro);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-artist {
+    font-size: 0.73rem;
+    color: var(--texto-suave);
+}
+
+.track-play {
+    font-size: 0.9rem;
+    color: var(--azul);
+}
+
+/* Barra de progreso */
+.now-playing {
+    margin-top: 0.8rem;
+}
+
+.music-bar {
+    height: 4px;
+    background: var(--azul-suave);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.music-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--azul), var(--rojo));
+    border-radius: 2px;
+    animation: progress 3s linear infinite;
+}
+
+@keyframes progress {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.now-playing-text {
+    font-size: 0.75rem;
+    color: var(--azul);
+    margin-top: 0.4rem;
+    text-align: center;
+    font-weight: 600;
+}

@@ -1,0 +1,11 @@
+.layout {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 520px;
+}
+
+.main {
+    padding: 2rem;
+}

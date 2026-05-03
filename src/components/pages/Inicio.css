@@ -1,0 +1,50 @@
+.inicio {
+    max-width: 560px;
+}
+
+.page-title {
+    font-family: var(--fuente-titulo);
+    font-size: 1.8rem;
+    color: var(--rojo);
+    margin-bottom: 1rem;
+}
+
+.inicio-desc {
+    font-size: 0.95rem;
+    color: var(--texto-suave);
+    line-height: 1.7;
+    margin-bottom: 1.6rem;
+}
+
+/* Shortcuts */
+.shortcuts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+}
+
+.shortcut-card {
+    border-radius: var(--radio-lg);
+    padding: 1.2rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.shortcut-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px #e6394620;
+}
+
+.shortcut-icon {
+    font-size: 2rem;
+}
+
+.shortcut-label {
+    font-size: 0.88rem;
+    font-weight: 700;
+}

@@ -1,0 +1,130 @@
+.contacto {
+    width: 100%;
+}
+
+.contacto-desc {
+    font-size: 0.95rem;
+    color: var(--texto-suave);
+    line-height: 1.6;
+    margin-bottom: 1.4rem;
+}
+
+/* Formulario */
+.contact-form {
+    background: var(--blanco);
+    border: 2px solid var(--azul-suave);
+    border-radius: var(--radio-lg);
+    padding: 1.5rem;
+    max-width: 420px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--texto);
+    margin-bottom: 0.3rem;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    border: 1.5px solid var(--pastel-rosa);
+    border-radius: var(--radio-sm);
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.88rem;
+    color: var(--texto);
+    background: var(--fondo);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: var(--azul);
+}
+
+.form-textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Error */
+.form-error {
+    font-size: 0.82rem;
+    color: var(--rojo);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+/* Botón enviar */
+.submit-btn {
+    width: 100%;
+    padding: 0.6rem;
+    background: var(--rojo);
+    color: var(--blanco);
+    border: none;
+    border-radius: var(--radio-pill);
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.submit-btn:hover {
+    background: var(--rojo-oscuro);
+    transform: translateY(-2px);
+}
+
+/* Éxito */
+.success-box {
+    background: linear-gradient(135deg, var(--pastel-rosa), var(--azul-suave));
+    border-radius: var(--radio-lg);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    max-width: 380px;
+}
+
+.success-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+.success-title {
+    font-family: var(--fuente-titulo);
+    font-size: 1.5rem;
+    color: var(--rojo);
+    margin-bottom: 0.5rem;
+}
+
+.success-desc {
+    font-size: 0.9rem;
+    color: #4a3a4a;
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+}
+
+.reset-btn {
+    padding: 0.5rem 1.4rem;
+    background: var(--blanco);
+    color: var(--rojo);
+    border: 2px solid var(--rojo);
+    border-radius: var(--radio-pill);
+    font-family: var(--fuente-cuerpo);
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.reset-btn:hover {
+    background: var(--rojo);
+    color: var(--blanco);
+}

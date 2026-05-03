@@ -1,0 +1,50 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700&display=swap');
+
+/* Variables globales */
+:root {
+    /* Colores principales */
+    --rojo: #e63946;
+    --rojo-oscuro: #c1121f;
+    --rojo-suave: #ff6b6b;
+    --azul: #4dabf7;
+    --azul-oscuro: #1971c2;
+    --azul-suave: #d6eaff;
+
+    /* Pasteles */
+    --pastel-rosa: #ffd6e8;
+    --pastel-verde: #d6f5e3;
+    --pastel-lila: #efe6ff;
+    --pastel-amarillo: #fff3b0;
+
+    /* Neutros */
+    --fondo: #fef6fb;
+    --blanco: #ffffff;
+    --texto: #3a2e2e;
+    --texto-suave: #7a6a6a;
+    --texto-claro: #b0a0a0;
+
+    /* Tipografía */
+    --fuente-titulo: 'Pacifico', cursive;
+    --fuente-cuerpo: 'Nunito', sans-serif;
+
+    /* Bordes y radios */
+    --radio-sm: 8px;
+    --radio-md: 14px;
+    --radio-lg: 20px;
+    --radio-pill: 999px;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-cuerpo);
+    background: var(--fondo);
+    color: var(--texto);
+    min-height: 100vh;
+}

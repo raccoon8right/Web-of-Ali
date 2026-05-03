@@ -1,0 +1,116 @@
+.sobre-mi {
+    width: 100%;
+}
+
+/* Caja principal */
+.about-box {
+    background: linear-gradient(135deg, var(--pastel-rosa), var(--azul-suave));
+    border-radius: var(--radio-lg);
+    padding: 1.8rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.about-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--rojo), var(--azul));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--fuente-titulo);
+    font-size: 1.8rem;
+    color: var(--blanco);
+    flex-shrink: 0;
+}
+
+.about-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.about-name {
+    font-family: var(--fuente-titulo);
+    font-size: 1.4rem;
+    color: var(--rojo);
+    margin-bottom: 0.5rem;
+}
+
+.about-desc {
+    font-size: 0.9rem;
+    color: #4a3a4a;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* Hobbies */
+.hobbies-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+}
+
+.hobbies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.hobby-chip {
+    padding: 4px 12px;
+    border-radius: var(--radio-pill);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+/* Datos curiosos */
+.fun-facts {
+    width: 100%;
+}
+
+.facts-title {
+    font-family: var(--fuente-titulo);
+    font-size: 1.2rem;
+    color: var(--rojo);
+    margin-bottom: 1rem;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.8rem;
+}
+
+.fact-card {
+    border-radius: var(--radio-md);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+    transition: transform 0.2s;
+    cursor: default;
+}
+
+.fact-card:hover {
+    transform: translateY(-3px);
+}
+
+.fact-icon {
+    font-size: 1.8rem;
+}
+
+.fact-text {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--texto);
+    line-height: 1.3;
+}
