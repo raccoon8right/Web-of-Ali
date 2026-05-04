@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://raccoon8right.github.io/Ali-s_Web/",
+  "homepage": "https://raccoon8right.github.io/Web-of-Ali/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
