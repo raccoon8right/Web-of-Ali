@@ -1,22 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 .layout {
     display: grid;
     grid-template-columns: 72px 1fr;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    min-height: 520px;
+    min-height: calc(100vh - 58px);
 }
 
 .main {
     padding: 2rem;
+    min-width: 0;
+    /* ← evita que el contenido desborde */
+    overflow-x: hidden;
 }
 
-/* ================================
-    RESPONSIVO
-================================ */
-
-/* Desktop > 1024px — ya está bien por defecto */
-
-/* Laptop 769px — 1024px */
+/* Laptop */
 @media (max-width: 1024px) {
     .layout {
         max-width: 100%;
@@ -27,24 +35,26 @@
     }
 }
 
-/* Tablet 481px — 768px */
+/* Tablet */
 @media (max-width: 768px) {
     .layout {
-        grid-template-columns: 56px 1fr;
+        grid-template-columns: 52px 1fr;
     }
 
     .main {
-        padding: 1.5rem;
+        padding: 1.2rem;
     }
 }
 
-/* Mobile < 480px */
+/* Mobile */
 @media (max-width: 480px) {
     .layout {
         grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
     }
 
     .main {
         padding: 1rem;
+        width: 100%;
     }
 }
