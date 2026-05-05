@@ -1,19 +1,17 @@
-import { useMemo } from "react"
+import { useState } from "react"  // ← useState en lugar de useMemo
 import "./Hero.css"
 import AliPhoto from "../assets/Ali.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const tags = [
-    { icon: "palette", label: "Arte" },
-    { icon: "music", label: "Música" },
-    { icon: "utensils", label: "Cocina" },
-    { icon: "pencil", label: "Dibujo" },
-    { icon: "cat", label: "Gatos" },
-    { icon: "plane", label: "Viajes" },
+    { icon: "palette", label: "Arte", color: "#ffd6e8", textColor: "#c1121f", placeholder: "https://placehold.co/160x100/ffd6e8/c1121f?text=Arte" },
+    { icon: "music", label: "Música", color: "#d6eaff", textColor: "#1971c2", placeholder: "https://placehold.co/160x100/d6eaff/1971c2?text=Musica" },
+    { icon: "utensils", label: "Cocina", color: "#d6f5e3", textColor: "#2d6a4f", placeholder: "https://placehold.co/160x100/d6f5e3/2d6a4f?text=Cocina" },
+    { icon: "pencil", label: "Dibujo", color: "#efe6ff", textColor: "#6741d9", placeholder: "https://placehold.co/160x100/efe6ff/6741d9?text=Dibujo" },
+    { icon: "cat", label: "Gatos", color: "#fff3b0", textColor: "#a0700a", placeholder: "https://placehold.co/160x100/fff3b0/a0700a?text=Clairo" },
+    { icon: "plane", label: "Viajes", color: "#d6eaff", textColor: "#1971c2", placeholder: "https://placehold.co/160x100/d6eaff/1971c2?text=Viajes" },
 ]
 
-// Posiciones fijas para las huellas, fuera del componente
-// así no se recalculan en cada render
 const pawPositions = [
     { left: "5%", top: "10%", delay: "0s", size: "1.4rem", rotate: "20deg" },
     { left: "15%", top: "70%", delay: "0.8s", size: "1.8rem", rotate: "120deg" },
@@ -32,27 +30,14 @@ const pawPositions = [
 function Hero() {
     return (
         <section className="hero">
-
-            {/* Huellas animadas */}
             <div className="paws-container">
                 {pawPositions.map((pos, i) => (
-                    <span
-                        key={i}
-                        className="paw"
-                        style={{
-                            left: pos.left,
-                            top: pos.top,
-                            animationDelay: pos.delay,
-                            fontSize: pos.size,
-                            "--rotate": pos.rotate,
-                        }}
-                    >
+                    <span key={i} className="paw" style={{ left: pos.left, top: pos.top, animationDelay: pos.delay, fontSize: pos.size, "--rotate": pos.rotate }}>
                         <FontAwesomeIcon icon="paw" />
                     </span>
                 ))}
             </div>
 
-            {/* Contenido */}
             <div className="hero-content">
                 <div className="hero-avatar">
                     <img src={AliPhoto} alt="Ali" />
@@ -60,22 +45,30 @@ function Hero() {
 
                 <div className="hero-text">
                     <p className="hero-pretitle">— De los rincones del mundo —</p>
-                    <h1 className="hero-title">Yo soy Ali,<br />y este es mi reino.</h1>
+                    <h1 className="hero-title">Yo soy Alejandra,<br />y este es mi reino.</h1>
                     <p className="hero-desc">
                         「 Fall seven times, stand up eight. 」<br />
                         <span>七転び八起き — Nana korobi ya oki</span>
                     </p>
 
                     <div className="hero-tags">
-                        {tags.map(({ icon, label }) => (
-                            <span key={label} className="htag">
-                                <FontAwesomeIcon icon={icon} /> {label}
+                        {tags.map((tag) => (
+                            <span
+                                key={tag.label}
+                                className="htag"
+                                style={{ "--tag-color": tag.color, "--tag-text": tag.textColor }}
+                            >
+                                <FontAwesomeIcon icon={tag.icon} />
+                                {tag.label}
+                                <div className="tag-tooltip" style={{ "--tag-color": tag.color, "--tag-text": tag.textColor }}>
+                                    <img src={tag.placeholder} alt={tag.label} className="tag-tooltip-img" />
+                                    <span className="tag-tooltip-label">{tag.label}</span>
+                                </div>
                             </span>
                         ))}
                     </div>
                 </div>
             </div>
-
         </section>
     )
 }

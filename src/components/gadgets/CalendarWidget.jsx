@@ -129,7 +129,7 @@ function CalendarWidget() {
     return (
         <div className="calendar">
             <div className="cal-title">
-                <FontAwesomeIcon icon="calendar-days" /> Calendario de Ali
+                <FontAwesomeIcon icon={["fas", "calendar-days"]} /> Calendario de Ali
             </div>
 
             {/* Fecha */}

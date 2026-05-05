@@ -2,7 +2,7 @@
     background: linear-gradient(160deg, var(--pastel-rosa) 0%, var(--azul-suave) 50%, var(--pastel-lila) 100%);
     padding: 3.5rem 3rem;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     min-height: 320px;
 }
 
@@ -12,6 +12,7 @@
     inset: 0;
     pointer-events: none;
     z-index: 0;
+    overflow: hidden;
 }
 
 .paw {
@@ -56,7 +57,7 @@
     flex-wrap: wrap;
 }
 
-/* Avatar con foto */
+/* Avatar */
 .hero-avatar {
     width: 150px;
     height: 150px;
@@ -130,10 +131,68 @@
     background: var(--blanco);
     color: var(--rojo);
     border: 1.5px solid var(--pastel-rosa);
-    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    position: relative;
+    /* sin transform en la transición para no afectar el tooltip */
+    transition: background 0.25s, color 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
 .htag:hover {
-    background: var(--rojo);
-    color: var(--blanco);
+    background: var(--tag-color);
+    color: var(--tag-text);
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--tag-color) 60%, transparent);
+    border-color: var(--tag-text);
+    z-index: 100;
+}
+
+/* Tooltip — oculto por defecto con opacity/visibility */
+.tag-tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    background: var(--blanco);
+    border: 2px solid var(--tag-color, var(--pastel-rosa));
+    border-radius: var(--radio-md);
+    padding: 0.4rem;
+    box-shadow: 0 8px 24px #00000020;
+    z-index: 200;
+    pointer-events: none;
+    /* oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* Tooltip visible al hover */
+.htag:hover .tag-tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Flecha del tooltip */
+.tag-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--tag-color, var(--pastel-rosa));
+}
+
+.tag-tooltip-img {
+    width: 100%;
+    border-radius: var(--radio-sm);
+    display: block;
+}
+
+.tag-tooltip-label {
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--tag-text, var(--rojo));
+    margin-top: 0.3rem;
 }
