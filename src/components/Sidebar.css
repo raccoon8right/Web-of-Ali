@@ -10,6 +10,8 @@
     top: 58px;
     height: calc(100vh - 58px);
     align-self: start;
+    z-index: 500;
+    isolation: isolate;
 }
 
 /* Botones gadget */
@@ -110,7 +112,7 @@
 /* Panel flotante */
 .gadget-panel {
     position: absolute;
-    left: 60px;
+    left: 72px;
     top: 0;
     width: 260px;
     background: var(--blanco);
