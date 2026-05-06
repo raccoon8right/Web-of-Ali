@@ -6,36 +6,42 @@ html,
 body {
     overflow-x: hidden;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .layout {
     display: grid;
     grid-template-columns: 72px 1fr;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
     min-height: calc(100vh - 58px);
 }
 
 .main {
     padding: 2rem;
     min-width: 0;
-    /* ← evita que el contenido desborde */
     overflow-x: hidden;
 }
 
-/* Laptop */
-@media (max-width: 1024px) {
+/* Desktop grande 1400px+ */
+@media (min-width: 1400px) {
     .layout {
-        max-width: 100%;
+        grid-template-columns: 80px 1fr;
     }
 
+    .main {
+        padding: 2.5rem 4rem;
+    }
+}
+
+/* Laptop 769px — 1024px */
+@media (max-width: 1024px) {
     .main {
         padding: 1.8rem;
     }
 }
 
-/* Tablet */
+/* Tablet 481px — 768px */
 @media (max-width: 768px) {
     .layout {
         grid-template-columns: 52px 1fr;
@@ -46,7 +52,7 @@ body {
     }
 }
 
-/* Mobile */
+/* Mobile < 480px */
 @media (max-width: 480px) {
     .layout {
         grid-template-columns: 1fr;

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "./Galeria.css"
 
@@ -20,13 +20,41 @@ function Galeria() {
     const [current, setCurrent] = useState(0)
     const [lightbox, setLightbox] = useState(false)
     const [lightboxIdx, setLightboxIdx] = useState(0)
+    const galleryRef = useRef(null)
+
+    // Bloquea el scroll cuando el lightbox está abierto
+    useEffect(() => {
+        const blockScroll = (e) => e.preventDefault()
+
+        if (lightbox) {
+            document.body.style.overflow = "hidden"
+            document.body.style.height = "100%"
+            document.addEventListener("wheel", blockScroll, { passive: false })
+            document.addEventListener("touchmove", blockScroll, { passive: false })
+        } else {
+            document.body.style.overflow = ""
+            document.body.style.height = ""
+            document.removeEventListener("wheel", blockScroll)
+            document.removeEventListener("touchmove", blockScroll)
+        }
+        // Limpia al desmontar el componente
+        return () => {
+            document.body.style.overflow = ""
+            document.body.style.height = ""
+            document.removeEventListener("wheel", blockScroll)
+            document.removeEventListener("touchmove", blockScroll)
+        }
+    }, [lightbox])
 
     const prev = () => setCurrent(c => (c - 1 + items.length) % items.length)
     const next = () => setCurrent(c => (c + 1) % items.length)
 
     const openLightbox = (idx) => {
-        setLightboxIdx(idx)
-        setLightbox(true)
+        galleryRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+        setTimeout(() => {
+            setLightboxIdx(idx)
+            setLightbox(true)
+        }, 400)
     }
 
     const prevLight = () => setLightboxIdx(i => (i - 1 + items.length) % items.length)
@@ -44,7 +72,7 @@ function Galeria() {
     }
 
     return (
-        <div className="galeria">
+        <div className="galeria" ref={galleryRef}>
             <h2 className="page-title">
                 <FontAwesomeIcon icon="images" /> Galería
             </h2>
